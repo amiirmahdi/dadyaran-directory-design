@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#122638"/>
+<meta name="description" content="نمونه آزمایشی رابط کاربری دایرکتوری وکلای دادیاران. تمامی داده‌های وکلا در این نسخه ساختگی است."/>
+<title>جستجوی وکلای مشهد | پیش‌نمایش طراحی دادیاران</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.7.1/dist/css/tabler.min.css"/>
+<link rel="stylesheet" href="./assets/css/design.css"/>
+</head>
+<body>
+<div class="demo-notice"><span class="notice-dot"></span> پیش‌نمایش طراحی دادیاران — اطلاعات وکلا نمونه و غیرواقعی است <span class="version-tag">UI v0.1</span></div>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a href="./index.html" class="brand" aria-label="دادیاران، صفحه اول"><span class="brand-mark">د</span><span class="brand-name">دادیاران<small>مرجع انتخاب وکیل</small></span></a>
+    <nav class="desktop-nav" aria-label="منوی اصلی"><a href="#search" class="active">جستجوی وکیل</a><a href="#specialties">حوزه‌های وکالت</a><a href="#about">درباره دادیاران</a></nav>
+    <a class="header-account" href="#registration" title="این قسمت در نسخه نمایشی فعال نیست">ورود / ثبت‌نام <span>↗</span></a>
+  </div>
+</header>
+<main>
+<section class="hero" id="search">
+  <div class="shell hero-content">
+    <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> انتخاب آگاهانه، همراهی مطمئن</div>
+      <h1>وکیل مناسب پرونده‌تان را <em>آسان‌تر</em> پیدا کنید.</h1>
+      <p>وکلای شهر خود را بر اساس حوزه فعالیت و اطلاعات حرفه‌ای مقایسه کنید و با اطمینان بیشتری تصمیم بگیرید.</p>
+      <div class="hero-trust"><span>◉ &nbsp; جستجوی تخصصی</span><span>◉ &nbsp; پروفایل‌های قابل مقایسه</span></div>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="art-ring"></div><div class="art-ring art-ring-two"></div><div class="hero-symbol">⚖</div><div class="art-caption">داد · عدالت · انتخاب</div></div>
+  </div>
+</section>
+<section class="shell search-overlap" aria-label="فرم جستجوی وکیل">
+  <form class="search-panel" id="searchForm">
+    <div class="search-field"><label for="citySelect">شهر مورد نظر</label><div class="field-control"><span class="field-icon">⌖</span><select id="citySelect" aria-label="انتخاب شهر"><option value="مشهد">مشهد</option><option value="تهران">تهران</option><option value="اصفهان">اصفهان</option><option value="شیراز">شیراز</option></select></div></div>
+    <div class="search-field"><label for="specialtySelect">حوزه تخصصی</label><div class="field-control"><span class="field-icon">▤</span><select id="specialtySelect" aria-label="انتخاب حوزه تخصصی"><option value="all">همه تخصص‌ها</option><option value="کیفری" selected>کیفری</option><option value="خانواده">خانواده</option><option value="ملکی">ملکی</option><option value="مالی">مالی</option><option value="کار">دعاوی کار</option></select></div></div>
+    <div class="search-field search-name"><label for="nameSearch">نام وکیل (اختیاری)</label><div class="field-control"><span class="field-icon">⌕</span><input id="nameSearch" type="search" placeholder="جستجوی نام و نام خانوادگی" autocomplete="off"/></div></div>
+    <button class="search-button" type="submit"><span aria-hidden="true">⌕</span> جستجوی وکیل</button>
+  </form>
+</section>
+<div class="shell main-content">
+  <div class="breadcrumb-line"><a href="./index.html">دادیاران</a><span>›</span><span id="crumbCity">مشهد</span><span>›</span><strong id="crumbSpecialty">وکلای کیفری</strong></div>
+  <div class="page-heading"><div><div class="mini-label">فهرست وکلای شهر و تخصص</div><h2 id="resultsTitle">وکلای کیفری در مشهد</h2><p>اطلاعات حرفه‌ای را بررسی کنید و وکلای مناسب پرونده خود را مقایسه کنید.</p></div><div class="page-heading-decoration" aria-hidden="true">01 <span>/ DIRECTORY</span></div></div>
+
+  <section class="vip-section" aria-labelledby="vipTitle">
+    <div class="section-head">
+      <div class="heading-with-icon"><span class="vip-icon">✦</span><div><div class="mini-label">جایگاه‌های ویژه</div><h3 id="vipTitle">وکلای ویژه <span id="vipCity">مشهد</span></h3></div></div>
+      <div class="section-subtitle">نمایش تبلیغاتی اعضای VIP دارای تخصص مرتبط</div>
+    </div>
+    <div class="vip-grid" id="vipGrid"></div>
+  </section>
+
+  <section class="listing" id="specialties" aria-labelledby="listTitle">
+    <div class="listing-top"><div><div class="mini-label">همه وکلا</div><h3 id="listTitle">نتایج جستجو <span id="resultCount" class="result-count">۰</span></h3></div><div class="toolbar"><label for="sortSelect">مرتب‌سازی</label><select id="sortSelect" class="sort-select"><option value="default">پیشنهادی</option><option value="experience">سابقه بیشتر</option><option value="name">نام وکیل</option></select><button class="mobile-filter-button" id="filtersToggle" type="button">فیلترها ☷</button></div></div>
+    <div class="listing-layout">
+      <aside class="filters" id="filtersPanel" aria-label="فیلتر نتایج">
+        <div class="filter-heading"><h4>فیلتر نتایج</h4><button type="button" class="reset-button" id="clearFilters">پاک کردن</button></div>
+        <div class="filter-group"><label class="filter-title">سطح عضویت</label><label class="check-row"><input type="checkbox" value="vip" class="tier-filter"/> وکلای VIP</label><label class="check-row"><input type="checkbox" value="star" class="tier-filter"/> وکلای ستاره‌دار</label><label class="check-row"><input type="checkbox" value="free" class="tier-filter"/> وکلای عادی</label></div>
+        <div class="filter-group"><label class="filter-title">خدمات</label><label class="check-row"><input type="checkbox" id="remoteOnly"/> مشاوره غیرحضوری</label></div>
+        <div class="filter-info">سطح VIP و ستاره‌دار، نوع عضویت تجاری است و به معنای رتبه حرفه‌ای یا تضمین نتیجه پرونده نیست.</div>
+      </aside>
+      <div class="results-area"><div class="results-grid" id="resultsGrid"></div><div class="empty-state" id="emptyState" hidden><span class="empty-glyph">⌕</span><h4>نتیجه‌ای پیدا نشد</h4><p>شهر، تخصص یا فیلترهای خود را تغییر دهید.</p><button type="button" class="outline-btn" id="emptyReset">پاک کردن فیلترها</button></div><div class="list-disclaimer">اطلاعات و نام وکلای این نسخه، صرفاً برای بررسی طراحی ساخته شده‌اند. دادیاران مسئولیت انتخاب نهایی وکیل را برعهده کاربر می‌گذارد.</div></div>
+    </div>
+  </section>
+  <section class="about-strip" id="about"><div><div class="mini-label">تصمیم‌گیری بهتر</div><h3>برای انتخاب وکیل، فقط به برچسب عضویت اکتفا نکنید.</h3><p>حوزه فعالیت، سابقه، خدمات و اطلاعات قابل راستی‌آزمایی را بررسی کنید.</p></div><a href="#search">بازگشت به جستجو <span>←</span></a></section>
+</div>
+</main>
+<footer class="footer"><div class="shell footer-inner"><div><strong>دادیاران</strong><p>مرجع جستجو و مقایسه وکلا</p></div><div>نسخه آزمایشی فرانت‌اند · بدون اتصال به وردپرس یا پایگاه داده</div></div></footer>
+<div class="compare-bar" id="compareBar" hidden><div class="shell compare-inner"><span id="compareLabel">۰ وکیل برای مقایسه</span><div><button type="button" id="compareClear" class="compare-clear">پاک کردن</button><button type="button" id="compareOpen" class="compare-action">مقایسه وکلا <span>←</span></button></div></div></div>
+<div class="modal-overlay" id="modalOverlay" hidden><div class="profile-dialog" role="dialog" aria-modal="true" aria-labelledby="dialogTitle"><button class="dialog-close" id="dialogClose" type="button" aria-label="بستن">×</button><div id="dialogBody"></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.7.1/dist/js/tabler.min.js"></script>
+<script src="./assets/js/app.js" defer></script>
+</body>
+</html>
